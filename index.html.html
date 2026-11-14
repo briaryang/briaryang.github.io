@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨蓓蓓｜个人简历&作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        softMain: '#6b7c93',
+                        softSub: '#94a3b8',
+                        softBg: '#f8f9fa',
+                        softCard: '#ffffff'
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .soft-shadow {
+                box-shadow: 0 2px 12px rgba(107, 124, 147, 0.08);
+            }
+            .card‑tran {
+                transition: 0.28s ease‑all;
+            }
+            .card‑tran:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 6px 18px rgba(107, 124, 147, 0.12);
+            }
+            .highlight‑text {
+                color:#6b7c93;
+                font-weight:500;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg‑softBg text‑slate‑700 bg-[#f8f9fa]">
+<!--导航栏 简约柔和-->
+<nav class="fixed w-full bg-white/85 backdrop‑blur‑sm soft‑shadow z‑50">
+    <div class="max‑w‑5xl mx‑auto px‑5 py‑3 flex justify‑between items‑center">
+        <a href="#" class="text‑softMain text‑lg font‑medium">杨蓓蓓 | 个人主页</a>
+        <div class="hidden md:flex gap‑6 text‑sm text‑slate‑600">
+            <a href="#home" class="hover:text‑softMain transition">首页</a>
+            <a href="#about" class="hover:text‑softMain transition">关于我</a>
+            <a href="#edu" class="hover:text‑softMain transition">教育背景</a>
+            <a href="#practice" class="hover:text‑softMain transition">实践经历</a>
+            <a href="#works" class="hover:text‑softMain transition">作品集</a>
+            <a href="#skill" class="hover:text‑softMain transition">技能荣誉</a>
+            <a href="#contact" class="hover:text‑softMain transition">联系我</a>
+        </div>
+        <button id="menuBtn" class="md:hidden text‑softMain text‑xl">
+            <i class="fa fa‑bars"></i>
+        </button>
+    </div>
+    <!--移动端菜单-->
+    <div id="mobileMenu" class="hidden md:hidden px‑5 pb‑3 space‑y‑2 text‑sm bg‑white">
+        <a href="#home" class="block py‑1 hover:text‑softMain">首页</a>
+        <a href="#about" class="block py‑1 hover:text‑softMain">关于我</a>
+        <a href="#edu" class="block py‑1 hover:text‑softMain">教育背景</a>
+        <a href="#practice" class="block py‑1 hover:text‑softMain">实践经历</a>
+        <a href="#works" class="block py‑1 hover:text‑softMain">作品集</a>
+        <a href="#skill" class="block py‑1 hover:text‑softMain">技能荣誉</a>
+        <a href="#contact" class="block py‑1 hover:text‑softMain">联系我</a>
+    </div>
+</nav>
+
+<!--首页 Hero 文静舒适，留白多-->
+<section id="home" class="pt‑32 pb‑20 px‑5">
+    <div class="max‑w‑5xl mx‑auto flex flex‑col md:flex‑row items‑center gap‑10">
+        <div class="w‑44 h‑44 rounded‑full bg‑slate‑100 overflow‑hidden flex items‑center justify‑center text‑softSub text‑5xl">
+            <i class="fa fa‑user‑o"></i>
+            <!--替换头像：删除上面一行，写 <img src="avatar.jpg" class="w‑full h‑full object‑cover"> -->
+        </div>
+        <div class="text‑center md:text‑left">
+            <h1 class="text‑[clamp(1.7rem,3.5vw,2.3rem)] font‑medium text‑softMain">杨蓓蓓</h1>
+            <p class="mt‑3 text‑softSub text‑lg">环境工程本科｜创意写作研究生｜文字创作者 & 自媒体博主</p>
+            <div class="mt‑6 max‑w‑xl text‑slate‑600 leading‑relaxed">
+                <p>擅长小说叙事、书评随笔、新媒体文案策划；兼具工科理性思维与文学感知力。</p>
+                <p class="mt‑2">全网自媒体账号<span class="highlight‑text">杨大寻</span>，深耕情感心理、女性成长、读书写作赛道。</p>
+            </div>
+            <div class="mt‑8 flex gap‑4 justify‑center md:justify‑start">
+                <a href="#works" class="px‑5 py‑2.5 bg‑softMain text‑white rounded‑lg hover:bg‑softSub transition">浏览作品集</a>
+                <a href="#contact" class="px‑5 py‑2.5 border border‑softMain text‑softMain rounded‑lg hover:bg‑white transition">联系我</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--关于我：提炼人物亮点，文静内敛，突出复合优势-->
+<section id="about" class="py‑18 px‑5 bg‑white">
+    <div class="max‑w‑5xl mx‑auto py‑10">
+        <h2 class="text‑2xl font‑medium text‑softMain mb‑8 border‑l‑4 border‑softSub pl‑3">关于我</h2>
+        <div class="space‑y‑5 text‑slate‑600 leading‑relaxed">
+            <p>性格文静细腻，共情力强，具备<span class="highlight‑text">工科专业底色+系统文学写作训练</span>的复合背景。本科学习环境工程，熟悉实验检测、项目报告撰写；研究生主修创意写作，深耕小说、文学评论、随笔散文创作。</p>
+            <p>作为自媒体创作者，擅长观察人性与女性内心，输出读书感悟、情感心理内容；熟悉全平台内容逻辑，可独立完成选题、撰稿、排版、账号运营。既能写感性文学叙事，也能输出商业推广文案、科普文稿。</p>
+            <p>核心优势：<span class="highlight‑text">文字共情力｜内容全链路产出｜跨视角思考｜长期稳定输出</span>。求职方向：文案编辑、新媒体内容创作、文学编辑、科普撰稿。</p>
+        </div>
+    </div>
+</section>
+
+<!--教育背景-->
+<section id="edu" class="py‑18 px‑5">
+    <div class="max‑w‑5xl mx‑auto py‑10">
+        <h2 class="text‑2xl font‑medium text‑softMain mb‑8 border‑l‑4 border‑softSub pl‑3">教育背景</h2>
+        <div class="grid md:grid‑cols‑2 gap‑6">
+            <div class="bg‑softCard p‑6 rounded‑xl soft‑shadow card‑tran">
+                <span class="text‑softSub text‑sm">本科</span>
+                <h3 class="text‑lg font‑medium mt‑1">四川农业大学 · 环境工程</h3>
+                <div class="mt‑3 text‑slate‑600 space‑y‑1.5">
+                    <p>加权成绩：86.57，专业排名 11/92</p>
+                    <p>主修：环境监测、水污染控制、固废处理等</p>
+                    <p>荣誉：校级优秀共青团员、国家励志奖学金</p>
+                </div>
+            </div>
+            <div class="bg‑softCard p‑6 rounded‑xl soft‑shadow card‑tran">
+                <span class="text‑softSub text‑sm">硕士（在读·非全日制）</span>
+                <h3 class="text‑lg font‑medium mt‑1">创意写作 硕士研究生</h3>
+                <div class="mt‑3 text‑slate‑600 space‑y‑1.5">
+                    <p>主攻：短篇小说创作、文学评论、随笔叙事</p>
+                    <p>训练人物塑造、故事结构、文本深度表达</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--实践经历：去掉精确月份，每个经历提炼亮点标签-->
+<section id="practice" class="py‑18 px‑5 bg‑white">
+    <div class="max‑w‑5xl mx‑auto py‑10">
+        <h2 class="text‑2xl font‑medium text‑softMain mb‑8 border‑l‑4 border‑softSub pl‑3">实践经历</h2>
+        <div class="space‑y‑8">
+            <div class="border‑l‑2 border‑softSub pl‑5">
+                <h3 class="font‑medium text‑lg">环境方向实践｜水务集团、沼气研究所、环境检测公司</h3>
+                <div class="mt‑2 text‑slate‑600 space‑y‑1">
+                    <p><span class="highlight‑text">能力亮点：实验检测｜报告编制｜项目协助｜设备与耗材管理</span></p>
+                    <p>参与污水、自来水厂监督管理；水质指标检测、实验方法验证、环境报告整理；科研发酵实验协助，实验耗材采购维护，协助完成项目汇报材料。</p>
+                </div>
+            </div>
+
+            <div class="border‑l‑2 border‑softSub pl‑5">
+                <h3 class="font‑medium text‑lg">线上内容运营｜品牌管理公司</h3>
+                <div class="mt‑2 text‑slate‑600 space‑y‑1">
+                    <p><span class="highlight‑text">能力亮点：0‑1账号搭建｜多平台文案｜产品推广｜选题撰稿</span></p>
+                    <p>负责品牌公众号、小红书、朋友圈、直播间推广文案；完成快消类产品种草、活动宣传文案输出，熟悉商业内容的表达逻辑。</p>
+                </div>
+            </div>
+
+            <div class="border‑l‑2 border‑softSub pl‑5">
+                <h3 class="font‑medium text‑lg">自媒体创作者｜账号「杨大寻」</h3>
+                <div class="mt‑2 text‑slate‑600 space‑y‑1">
+                    <p><span class="highlight‑text">能力亮点：全平台运营｜内容策划｜商业合作｜故事创作</span></p>
+                    <p>6年情感心理、读书博主，全平台累计4w+粉丝；小红书点赞收藏合计20w+；与多家出版社、百词斩、北辰青年、西瓜视频、新东方等开展推广合作；为尚列on the list输出百余篇小红书文案；短篇故事签约知乎、番茄小说、每天读点故事等平台。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--作品集：分四大板块，文静排版，卡片柔和，写清楚每一类亮点-->
+<section id="works" class="py‑18 px‑5">
+    <div class="max‑w‑5xl mx‑auto py‑10">
+        <h2 class="text‑2xl font‑medium text‑softMain mb‑8 border‑l‑4 border‑softSub pl‑3">作品集</h2>
+        <div class="grid md:grid‑cols‑2 gap‑6">
+            <!--1 短篇小说-->
+            <div class="bg‑softCard p‑6 rounded‑xl soft‑shadow card‑tran">
+                <h3 class="font‑medium text‑lg text‑softMain">📖 短篇小说</h3>
+                <p class="mt‑2 text‑slate‑600"><span class="highlight‑text">亮点：聚焦家庭、原生关系、女性内心冲突，强人物刻画，情绪细腻</span></p>
+                <ul class="mt‑3 space‑y‑1 text‑slate‑600 text‑sm">
+                    <li>《偏心》｜重生家庭伦理故事，探讨亲子偏爱与人性</li>
+                    <li>《寄人篱下》｜现实向亲情矛盾，网络高阅读短篇</li>
+                    <li>《放弃》｜家庭与生死议题，刻画普通人的挣扎与情感</li>
+                </ul>
+                <a href="#" class="inline‑block mt‑4 text‑softSub hover:underline text‑sm">查看完整故事 <i class="fa fa‑external‑link"></i></a>
+            </div>
+            <!--2 读书笔记-->
+            <div class="bg‑softCard p‑6 rounded‑xl soft‑shadow card‑tran">
+                <h3 class="font‑medium text‑lg text‑softMain">📚 读书笔记</h3>
+                <p class="mt‑2 text‑slate‑600"><span class="highlight‑text">亮点：深度文本解读，结合现实女性视角，输出独立思考，非简单内容复述</span></p>
+                <ul class="mt‑3 space‑y‑1 text‑slate‑600 text‑sm">
+                    <li>《面纱》《百年孤独》《窄门》《包法利夫人》《简·爱》《悉达多》《红与黑》《活着》《暮色将尽》等书评</li>
+                </ul>
+                <a href="#" class="inline‑block mt‑4 text‑softSub hover:underline text‑sm">阅读书评合集 <i class="fa fa‑external‑link"></i></a>
+            </div>
+            <!--3 随笔思考-->
+            <div class="bg‑softCard p‑6 rounded‑xl soft‑shadow card‑tran">
+                <h3 class="font‑medium text‑lg text‑softMain">✍️ 随笔思考</h3>
+                <p class="mt‑2 text‑slate‑600"><span class="highlight‑text">亮点：向内观察自我，探讨情绪、亲密关系、女性成长，文字克制共情</span></p>
+                <ul class="mt‑3 space‑y‑1 text‑slate‑600 text‑sm">
+                    <li>《允许自己情绪流动》《不完美是常态》《爱情的坚固联结，源于相处的共同经历》《我身上有个不可战胜的夏天》等</li>
+                </ul>
+                <a href="#" class="inline‑block mt‑4 text‑softSub hover:underline text‑sm">浏览随笔 <i class="fa fa‑external‑link"></i></a>
+            </div>
+            <!--4 商业&新媒体文案-->
+            <div class="bg‑softCard p‑6 rounded‑xl soft‑shadow card‑tran">
+                <h3 class="font‑medium text‑lg text‑softMain">📝 商业&新媒体文案</h3>
+                <p class="mt‑2 text‑slate‑600"><span class="highlight‑text">亮点：种草文案、活动推广、探店、科普，适配小红书/公众号多平台调性</span></p>
+                <ul class="mt‑3 space‑y‑1 text‑slate‑600 text‑sm">
+                    <li>尚列on the list平台百余篇小红书推广文案</li>
+                    <li>滴滴出行文案、二手奢侈品探店、好物种草、旅游攻略</li>
+                    <li>出版社图书推广合作稿件</li>
+                </ul>
+                <a href="#" class="inline‑block mt‑4 text‑softSub hover:underline text‑sm">查看文案案例 <i class="fa fa‑external‑link"></i></a>
+            </div>
+        </div>
+        <p class="mt‑6 text‑sm text‑slate‑500">提示：把 # 替换成你的文档、小红书、小说平台真实链接。</p>
+    </div>
+</section>
+
+<!--技能与荣誉-->
+<section id="skill" class="py‑18 px‑5 bg‑white">
+    <div class="max‑w‑5xl mx‑auto py‑10">
+        <h2 class="text‑2xl font‑medium text‑softMain mb‑8 border‑l‑4 border‑softSub pl‑3">技能 & 证书荣誉</h2>
+        <div class="grid md:grid‑cols‑2 gap‑8">
+            <div>
+                <h3 class="font‑medium text‑softMain mb‑3">语言 & 证书</h3>
+                <ul class="space‑y‑2 text‑slate‑600">
+                    <li><i class="fa fa‑check‑circle text‑softSub mr‑2"></i>大学英语CET‑6</li>
+                    <li><i class="fa fa‑check‑circle text‑softSub mr‑2"></i>全国计算机二级</li>
+                    <li><i class="fa fa‑check‑circle text‑softSub mr‑2"></i>校级优秀共青团员、国家励志奖学金</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font‑medium text‑softMain mb‑3">工具能力</h3>
+                <ul class="space‑y‑2 text‑slate‑600">
+                    <li><i class="fa fa‑check‑circle text‑softSub mr‑2"></i>排版：秀米、壹伴</li>
+                    <li><i class="fa fa‑check‑circle text‑softSub mr‑2"></i>图文设计：Canva可画、稿定设计</li>
+                    <li><i class="fa fa‑check‑circle text‑softSub mr‑2"></i>剪辑：剪映；熟练多平台账号运营</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--联系我-->
+<section id="contact" class="py‑18 px‑5">
+    <div class="max‑w‑5xl mx‑auto py‑10">
+        <h2 class="text‑2xl font‑medium text‑softMain mb‑8 border‑l‑4 border‑softSub pl‑3">联系我</h2>
+        <div class="bg‑softCard p‑7 rounded‑xl soft‑shadow">
+            <div class="space‑y‑4 text‑slate‑600">
+                <p><i class="fa fa‑phone text‑softSub w‑6"></i>电话：18215676525</p>
+                <p><i class="fa fa‑envelope‑o text‑softSub w‑6"></i>邮箱：1913369022@qq.com</p>
+                <p><i class="fa fa‑user‑circle‑o text‑softSub w‑6"></i>自媒体账号：杨大寻（小红书 / 知乎 / 抖音）</p>
+                <p><i class="fa fa‑file‑pdf‑o text‑softSub w‑6"></i>下载完整简历PDF：<a href="#" class="text‑softMain underline">点击下载</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--页脚-->
+<footer class="py‑8 text‑center text‑sm text‑slate‑400">
+    <p>©2026 杨蓓蓓 · 个人简历作品集网页</p>
+</footer>
+
+<script>
+//移动端菜单开关
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',function(){
+    mobileMenu.classList.toggle('hidden');
+})
+//点击菜单链接自动收起移动端菜单
+mobileMenu.querySelectorAll('a').forEach(item=>{
+    item.addEventListener('click',()=>{
+        mobileMenu.classList.add('hidden')
+    })
+})
+</script>
+</body>
+</html>
