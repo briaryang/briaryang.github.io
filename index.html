@@ -7,8 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Noto Sans SC",system-ui,-apple-system,Segoe UI,sans-serif}
 html{scroll-behavior:smooth;}
-
-/* 清新薄荷青极简学院风 */
+/* 清新浅青蓝配色，低饱和，清爽通透 */
 :root{
   --main:#5499a8;
   --secondary:#78b4c1;
@@ -17,126 +16,96 @@ html{scroll-behavior:smooth;}
   --text-primary:#2c2c2c;
   --text-secondary:#555555;
   --border-soft:#e7f0f2;
-  --shadow:0 3px 12px rgba(84, 153, 168, 0.04);
+  --shadow:0 3px 12px rgba(84, 153, 168, 0.06);
 }
 body{background-color:var(--light-bg);color:var(--text-primary);line-height:1.7}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
 
-/* 顶部横幅 */
-.top-banner{position:relative;width:100%;height:220px;overflow:hidden;border-radius:18px;margin-bottom:32px}
-.top-banner img{width:100%;height:100%;object-fit:cover}
-.top-banner .banner-mask{position:absolute;inset:0;background:linear-gradient(135deg,rgba(84,153,168,0.85),rgba(120,180,193,0.75))}
-.top-banner .banner-text{position:absolute;left:40px;top:50%;transform:translateY(-50%);color:#fff}
-.top-banner .banner-text h1{font-size:34px;font-weight:500;margin-bottom:8px}
-.top-banner .banner-text p{opacity:0.92;font-size:16px}
+/* 顶部头部横幅 清新渐变 */
+.banner{background:linear-gradient(135deg,var(--main),var(--secondary));color:#fff;padding:56px 0;text-align:center}
+.banner h1{font-size:36px;font-weight:500;margin-bottom:12px}
+.banner p{opacity:0.92;font-size:18px}
 
-/* 导航 */
-nav{background:var(--card-bg);border-radius:12px;box-shadow:var(--shadow);padding:16px;text-align:center;border:1px solid var(--border-soft);margin-bottom:32px}
-nav a{display:inline-block;margin:0 18px;color:var(--main);text-decoration:none;font-weight:500;font-size:15px;transition:0.22s}
+/* 导航栏 */
+.nav-wrap{margin:-32px auto 48px;max-width:960px;position:relative;z-index:10}
+nav{background:var(--card-bg);border-radius:14px;box-shadow:var(--shadow);padding:18px;text-align:center;border:1px solid var(--border-soft)}
+nav a{display:inline-block;margin:0 20px;color:var(--main);text-decoration:none;font-weight:500;font-size:16px;transition:0.22s}
 nav a:hover{color:var(--secondary);text-decoration:underline}
 
-/* 通用卡片 */
-.panel{background:var(--card-bg);border-radius:16px;border:1px solid var(--border-soft);box-shadow:var(--shadow);overflow:hidden}
-.panel-header{padding:14px 20px;border-left:4px solid var(--main);background:#f7fbfc;font-size:17px;color:var(--main);font-weight:500}
-
-/* 左右双栏布局 */
-.two-col{display:grid;grid-template-columns:1fr 1.6fr;gap:24px;margin-bottom:32px}
-@media(max-width:860px){.two-col{grid-template-columns:1fr}}
-
-/* 左侧信息卡 */
-.info-card{padding:24px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-soft);box-shadow:var(--shadow)}
-.info-card h3{font-size:18px;color:var(--main);margin-bottom:14px;padding-left:10px;border-left:4px solid var(--main)}
-.info-card p{font-size:14.5px;color:var(--text-secondary);margin-bottom:10px;line-height:1.7}
-.tag-item{display:inline-block;background:#ecf4f6;color:var(--main);padding:5px 11px;border-radius:999px;font-size:13px;margin:4px 3px 4px 0}
-
-/* 右侧大图展示区 */
-.big-img-panel{position:relative;border-radius:16px;overflow:hidden;height:100%}
-.big-img-panel img{width:100%;height:100%;object-fit:cover;display:block}
-.big-img-panel .img-caption{position:absolute;left:20px;bottom:20px;color:#fff;background:rgba(84,153,168,0.85);padding:8px 14px;border-radius:8px;font-size:14px}
-
-/* 经历时间线 */
-.experience-section{margin-bottom:32px}
-.timeline{padding:20px 24px}
-.timeline-item{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:18px 0;border-bottom:1px dashed var(--border-soft)}
-.timeline-item:last-child{border-bottom:none}
-.timeline-year{font-size:14px;color:var(--main);font-weight:600;padding-top:4px}
-.timeline-content h4{font-size:16px;color:var(--text-primary);margin-bottom:4px}
-.timeline-content p{font-size:14px;color:var(--text-secondary);line-height:1.7}
-.timeline-content em{display:block;margin-top:6px;font-size:13px;color:#7faab4;font-style:normal}
-
-/* 能力横条 */
-.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:24px}
-.skill-item{border:1px solid var(--border-soft);border-radius:12px;padding:18px;background:#fcfefe}
-.skill-item h4{font-size:15.5px;color:var(--main);margin-bottom:8px}
-.skill-item p{font-size:14px;color:var(--text-secondary)}
-
-/* 作品集三列卡片 */
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:24px}
-.portfolio-card{border:1px solid var(--border-soft);border-radius:14px;overflow:hidden;background:#fff;transition:0.26s}
-.portfolio-card:hover{box-shadow:var(--shadow)}
-.portfolio-card img{width:100%;height:160px;object-fit:cover;cursor:zoom-in}
-.portfolio-card-body{padding:16px}
-.portfolio-card-body h5{font-size:15.5px;color:var(--main);margin-bottom:6px}
-.portfolio-card-body p{font-size:14px;color:var(--text-secondary);margin-bottom:12px}
-.btn-detail{display:inline-block;padding:7px 16px;background:var(--main);color:#fff;border-radius:8px;text-decoration:none;font-size:14px;transition:0.2s}
-.btn-detail:hover{background:var(--secondary)}
-
-/* 联系区域 */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.contact-info{padding:30px}
-.contact-info p{font-size:15px;color:var(--text-secondary);margin-bottom:10px}
-.btn-download{display:inline-block;margin-top:14px;padding:10px 22px;background:var(--main);color:#fff;border-radius:9px;text-decoration:none;font-size:15px}
-.btn-download:hover{background:var(--secondary)}
-.contact-img{min-height:300px}
-.contact-img img{width:100%;height:100%;object-fit:cover}
-
-/* 图片弹窗 */
-#imgModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.84);z-index:9999;align-items:center;justify-content:center}
-#imgModal img{max-width:92vw;max-height:92vh;border-radius:7px}
-.modal-close{position:absolute;top:26px;right:32px;color:#fff;font-size:40px;cursor:pointer}
-
-footer{text-align:center;padding:36px 16px;color:#888;font-size:14px}
+/* 通用板块卡片 */
+.section-card{background:var(--card-bg);border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--border-soft);padding:40px;margin-bottom:36px}
+.section-two-col{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.section-two-col.reverse{direction:rtl}
+.section-two-col.reverse .text-area{direction:ltr}
 
 @media(max-width:768px){
-  .top-banner{height:160px}
-  .top-banner .banner-text{left:20px}
-  .top-banner .banner-text h1{font-size:26px}
-  .two-col,.contact-grid{grid-template-columns:1fr}
-  .timeline-item{grid-template-columns:1fr}
-  .timeline-year{margin-bottom:4px}
-  .skill-grid,.portfolio-grid{grid-template-columns:1fr}
+  .section-two-col,.section-two-col.reverse{grid-template-columns:1fr;direction:ltr}
 }
+
+.section-title{font-size:24px;color:var(--main);margin-bottom:24px;padding-left:14px;border-left:5px solid var(--main)}
+.text-area p{color:var(--text-secondary);margin-bottom:12px;font-size:16px}
+.tag-item{display:inline-block;background:#ecf4f6;color:var(--main);padding:6px 12px;border-radius:999px;font-size:14px;margin:6px 4px 6px 0}
+
+/* 图片样式，增加加载失败兜底 */
+.net-img{width:100%;border-radius:14px;cursor:zoom-in;transition:0.3s ease;object-fit:cover;min-height:160px;background:#f1f7f9}
+.net-img:hover{transform:scale(1.02)}
+
+/* 时间线 工作经历，时间只保留年份 */
+.timeline-item{border-left:2px solid var(--border-soft);padding-left:22px;margin-bottom:26px;position:relative}
+.timeline-item::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--main);position:absolute;left:-6px;top:4px}
+.timeline-item h4{font-size:17px;color:var(--main);margin-bottom:6px}
+.timeline-item .time{font-size:14px;color:#888;margin-bottom:8px}
+
+/* 作品集卡片 + 查看详情按钮，新窗口打开 */
+.portfolio-gallery{display:grid;grid-template-columns:repeat(auto‑fill,minmax(260px,1fr));gap:22px;margin-top:24px}
+.portfolio-card{border:1px solid var(--border-soft);border-radius:14px;overflow:hidden;background:#fff;transition:0.28s;display:flex;flex-direction:column}
+.portfolio-card:hover{box-shadow:var(--shadow)}
+.portfolio-card img{width:100%;height:180px;object‑fit:cover;background:#f1f7f9}
+.portfolio-card .desc{padding:16px;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+.portfolio-card .desc h5{font-size:16px;color:var(--main);margin-bottom:6px}
+.portfolio-card .desc p{font-size:14px;color:var(--text-secondary);margin-bottom:12px}
+.btn-detail{display:inline-block;text-align:center;padding:7px 0;background:var(--main);color:#fff;border-radius:8px;text-decoration:none;font-size:14px;transition:0.2s}
+.btn-detail:hover{background:var(--secondary)}
+
+/* PDF简历下载按钮 */
+.btn-download{display:inline-block;margin-top:12px;padding:9px 22px;background:var(--main);color:#fff;border-radius:9px;text-decoration:none;font-size:15px}
+.btn-download:hover{background:var(--secondary)}
+
+/* 图片弹窗 */
+#imgModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center}
+#imgModal img{max-width:92vw;max-height:92vh;border-radius:8px}
+.modal-close{position:absolute;top:28px;right:36px;color:#fff;font-size:44px;cursor:pointer}
+
+footer{text-align:center;padding:40px 20px;color:#888;font-size:14px}
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="banner">
+  <div class="container">
+    <h1>杨蓓蓓</h1>
+    <p>兼具理工思辨素养｜内容创作者｜文案策划｜新媒体运营</p>
+  </div>
+</div>
 
-  <!-- 顶部横幅 -->
-  <div class="top-banner">
-    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600" alt="个人主页横幅">
-    <div class="banner-mask"></div>
-    <div class="banner-text">
-      <h1>杨蓓蓓</h1>
-      <p>理工背景｜内容创作者｜文案策划｜新媒体运营</p>
-    </div>
+<div class="container">
+  <div class="nav-wrap">
+    <nav>
+      <a href="#about">关于我</a>
+      <a href="#experience">工作经历</a>
+      <a href="#skill">专业能力</a>
+      <a href="#portfolio">作品集</a>
+      <a href="#contact">联系我</a>
+    </nav>
   </div>
 
-  <!-- 导航 -->
-  <nav>
-    <a href="#about">关于我</a>
-    <a href="#experience">工作经历</a>
-    <a href="#skill">专业能力</a>
-    <a href="#portfolio">作品集</a>
-    <a href="#contact">联系我</a>
-  </nav>
-
-  <!-- 关于我：左信息卡 + 右大图 -->
-  <section class="two-col" id="about">
-    <div class="info-card">
-      <h3>关于我</h3>
-      <p>环境工程科研与工程实务背景，训练了问题分析、素材整理、结构化梳理和书面输出能力。我将这套理工思维迁移至内容创作，强调素材收集、议题拆解与文本结构搭建。</p>
-      <p>可独立完成商业文案、书评随笔、虚构故事、科普类稿件。运营自媒体账号「杨大寻」，熟悉账号从0-1搭建，兼顾内容逻辑、可读性与传播效果。</p>
+  <!-- 关于我：务实版本，全部删除沉淀二字 -->
+  <section class="section-card section-two-col" id="about">
+    <div class="text-area">
+      <h2 class="section-title">关于我</h2>
+      <p>环境工程专业多年科研与工程实务，训练了我严谨的问题分析、素材整理、结构化梳理与书面输出能力。我将这套理工思维迁移到内容创作领域：如同实验工作需要观测现象、整理资料、严谨输出报告，内容写作同样需要收集现实素材、拆解议题、搭建文本结构，完成完整成稿输出。</p>
+      <p>多年间，我兼顾工程类实务积累与内容创作实践，既能够理性梳理信息，也擅长文本表达，可产出商业文案、书评随笔、虚构故事、科普文稿等多类型稿件。</p>
+      <p>运营个人自媒体账号「杨大寻」，围绕女性成长、情感心理、阅读读书方向输出内容；熟悉账号从0‑1搭建，兼顾内容逻辑、可读性与平台传播效果。</p>
       <p>求职方向：新媒体内容运营、文案编辑、文学编辑、科普撰稿、品牌内容策划。</p>
       <div>
         <span class="tag-item">逻辑思辨</span>
@@ -146,159 +115,116 @@ footer{text-align:center;padding:36px 16px;color:#888;font-size:14px}
         <span class="tag-item">多平台账号运营</span>
       </div>
     </div>
+    <img class="net-img" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&fit=crop" alt="阅读写作">
+  </section>
 
-    <div class="big-img-panel">
-      <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=900" alt="文字工作">
-      <div class="img-caption">内容创作 · 文案策划 · 新媒体运营</div>
+  <!-- 工作经历：全部移除月份，仅保留年份，删除沉淀 -->
+  <section class="section-card" id="experience">
+    <h2 class="section-title">工作经历</h2>
+    <div class="timeline-item">
+      <h4>和浠品牌管理｜线上内容运营</h4>
+      <div class="time">2020‑至今</div>
+      <p>协助企业从0‑1搭建小红书、公众号等内容账号；负责快消类产品文案策划，产出小红书、朋友圈、直播间推广文案，承接品牌推广、活动营销类文案项目。<br><em>工作收获：将信息调研、结构化梳理能力运用到商业内容，平衡产品逻辑与用户阅读感受。</em></p>
+    </div>
+    <div class="timeline-item">
+      <h4>四川省地风升检测服务有限公司｜环境监测员</h4>
+      <div class="time">2019‑2020</div>
+      <p>开展水质相关指标检测；负责实验耗材采购、设备维护，协助完成实验报告整理归档。<br><em>工作收获：养成细致核查资料、归纳信息、规范成文输出的工作习惯。</em></p>
+    </div>
+    <div class="timeline-item">
+      <h4>农业部沼气科学研究所｜科研助理</h4>
+      <div class="time">2017‑2018</div>
+      <p>协助完成发酵实验，参与项目实验、数据整理，协助撰写实验汇报材料。<br><em>工作收获：锻炼复杂问题拆解、资料梳理能力，为各类文本撰写打下逻辑基础。</em></p>
+    </div>
+    <div class="timeline-item">
+      <h4>海天水务集团｜管培生</h4>
+      <div class="time">2017</div>
+      <p>水污染方向技术运营，开展水质指标检测、项目申报、实验方法验证、环境报告编制；监督管理下属水厂运营工作。<br><em>工作收获：大量报告撰写训练信息整合与严谨客观表达，建立客观理性的思考模式。</em></p>
     </div>
   </section>
 
-  <!-- 工作经历：参考图左侧时间线风格 -->
-  <section class="panel experience-section" id="experience">
-    <div class="panel-header">工作经历</div>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-year">2020 - 至今</div>
-        <div class="timeline-content">
-          <h4>和浠品牌管理｜线上内容运营</h4>
-          <p>参与企业账号从0-1搭建，负责快消产品文案策划，产出小红书、直播间、活动推广文案。</p>
-          <em>沉淀：将调研与结构化能力应用于商业内容，平衡产品逻辑与用户阅读体验。</em>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-year">2019 - 2020</div>
-        <div class="timeline-content">
-          <h4>四川省地风升检测服务有限公司｜环境监测员</h4>
-          <p>水质指标检测、耗材设备管理，协助实验报告归档整理。</p>
-          <em>沉淀：建立资料核查、信息归纳、规范成文的工作习惯。</em>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-year">2017 - 2018</div>
-        <div class="timeline-content">
-          <h4>农业部沼气科学研究所｜科研助理</h4>
-          <p>协助发酵实验、数据整理、实验汇报材料撰写。</p>
-          <em>沉淀：训练问题拆解与资料梳理，为文本写作建立逻辑基础。</em>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-year">2017</div>
-        <div class="timeline-content">
-          <h4>海天水务集团｜管培生</h4>
-          <p>水质检测、项目申报、环境报告编制，水厂运营监督。</p>
-          <em>沉淀：通过报告撰写锻炼信息整合与严谨客观表达。</em>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 专业能力：参考图下方多卡片排版 -->
-  <section class="panel" id="skill">
-    <div class="panel-header">专业能力</div>
-    <div class="skill-grid">
-      <div class="skill-item">
-        <h4>文本创作</h4>
-        <p>擅长素材调研、议题拆解、逻辑梳理，可输出短篇小说、深度书评、随笔、商业种草与科普文稿。</p>
-      </div>
-      <div class="skill-item">
-        <h4>新媒体运营</h4>
-        <p>负责小红书、抖音、知乎、公众号搭建与内容输出；个人账号「杨大寻」全平台粉丝4万+。</p>
-      </div>
-      <div class="skill-item">
-        <h4>信息处理</h4>
-        <p>延续理工科训练，强调资料核查、结构梳理、客观归纳与规范表达，适合内容类岗位。</p>
-      </div>
-      <div class="skill-item">
-        <h4>工具与语言</h4>
-        <p>秀米、壹伴、可画、稿定设计、剪映；英语CET-6；计算机二级。</p>
+  <!-- 专业能力 -->
+  <section class="section-card section-two-col reverse" id="skill">
+    <div class="text-area">
+      <h2 class="section-title">专业能力</h2>
+      <p><strong>思辨与文本输出：</strong>依托理工科训练背景，擅长素材调研、议题拆解、逻辑梳理；可完成多类型稿件：短篇小说、随笔思考、深度书评、商业种草文案、活动推广、科普文稿。多篇小说签约知乎、番茄小说、每天读点故事。</p>
+      <p><strong>新媒体运营实践：</strong>小红书、抖音、知乎、公众号账号搭建与内容输出；个人账号「杨大寻」全平台粉丝4万+，点赞收藏20万+；与多家出版社、商业品牌开展图书推广及商业内容合作。</p>
+      <p><strong>工具与语言：</strong>秀米、壹伴、可画、稿定设计、剪映；英语CET‑6；计算机二级。</p>
+      <div>
+        <span class="tag-item">信息调研梳理</span>
+        <span class="tag-item">逻辑叙事写作</span>
+        <span class="tag-item">书评&虚构创作</span>
+        <span class="tag-item">品牌商业文案</span>
+        <span class="tag-item">账号0‑1搭建运营</span>
       </div>
     </div>
+    <img class="net-img" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&fit=crop" alt="文字工作">
   </section>
 
-  <!-- 作品集：重点三列卡片 -->
-  <section class="panel" id="portfolio">
-    <div class="panel-header">作品集</div>
-    <div class="portfolio-grid">
+  <!-- 作品集板块：按钮增加 target="_blank"，新窗口打开，不会点击无响应 -->
+  <section class="section-card" id="portfolio">
+    <h2 class="section-title">作品集</h2>
+    <p>创作分为短篇小说、读书笔记、随笔思考三大板块；包含《偏心》《寄人篱下》《放弃》等签约短篇，大量经典文学书评、现实向随笔，同时产出商业合作文案、新媒体平台原创内容。个人自媒体账号：杨大寻。点击查看详情，新标签页打开完整作品文档。</p>
 
+    <div class="portfolio-gallery">
       <div class="portfolio-card">
-        <img class="net-img" src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=600" alt="短篇小说">
-        <div class="portfolio-card-body">
+        <img class="net-img" src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=640&fit=crop" alt="短篇小说">
+        <div class="desc">
           <h5>短篇小说</h5>
-          <p>《偏心》《寄人篱下》《放弃》，家庭现实题材，多篇平台签约。</p>
-          <a class="btn-detail" href="#">查看详情</a>
+          <p>《偏心》《寄人篱下》《放弃》，围绕家庭、现实处境展开叙事，多篇平台签约。</p>
+          <!-- 👉填入你的作品集文档链接 target="_blank" 新窗口打开 -->
+          <a class="btn-detail" href="" target="_blank" rel="noopener noreferrer">查看详情</a>
         </div>
       </div>
-
       <div class="portfolio-card">
-        <img class="net-img" src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=600" alt="读书笔记">
-        <div class="portfolio-card-body">
+        <img class="net-img" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=640&fit=crop" alt="读书笔记">
+        <div class="desc">
           <h5>深度读书笔记</h5>
-          <p>《面纱》《百年孤独》《简·爱》《活着》等经典文学分析。</p>
-          <a class="btn-detail" href="#">查看详情</a>
+          <p>《面纱》《百年孤独》《简·爱》《活着》等经典文学作品的分析与思考。</p>
+          <a class="btn-detail" href="" target="_blank" rel="noopener noreferrer">查看详情</a>
         </div>
       </div>
-
       <div class="portfolio-card">
-        <img class="net-img" src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=600" alt="随笔思考">
-        <div class="portfolio-card-body">
+        <img class="net-img" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=640&fit=crop" alt="随笔思考">
+        <div class="desc">
           <h5>随笔思考</h5>
-          <p>情绪处理、亲密关系、女性成长方向的现实观察与散文表达。</p>
-          <a class="btn-detail" href="#">查看详情</a>
+          <p>围绕情绪处理、亲密关系、女性自我成长，输出现实向观察与散文。</p>
+          <a class="btn-detail" href="" target="_blank" rel="noopener noreferrer">查看详情</a>
         </div>
       </div>
-
       <div class="portfolio-card">
-        <img class="net-img" src="https://images.unsplash.com/photo-1522542550221-31fd8575f3df?w=600" alt="商业文案">
-        <div class="portfolio-card-body">
+        <img class="net-img" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=640&fit=crop" alt="新媒体商业文案">
+        <div class="desc">
           <h5>商业文案作品</h5>
-          <p>小红书推广、活动文案、好物种草、探店与旅游攻略文案百余篇。</p>
-          <a class="btn-detail" href="#">查看详情</a>
+          <p>品牌小红书推广、活动文案、好物种草、旅游攻略、探店文案百余篇。</p>
+          <a class="btn-detail" href="" target="_blank" rel="noopener noreferrer">查看详情</a>
         </div>
       </div>
-
       <div class="portfolio-card">
-        <img class="net-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600" alt="自媒体账号">
-        <div class="portfolio-card-body">
+        <img class="net-img" src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=640&fit=crop" alt="自媒体账号">
+        <div class="desc">
           <h5>自媒体账号｜杨大寻</h5>
-          <p>小红书、抖音、知乎读书情感赛道，拥有多份出版社合作记录。</p>
-          <a class="btn-detail" href="#">查看详情</a>
+          <p>小红书、抖音、知乎，读书&情感心理赛道，全平台4万+粉丝，多出版社合作。</p>
+          <a class="btn-detail" href="" target="_blank" rel="noopener noreferrer">查看详情</a>
         </div>
-      </div>
-
-      <div class="portfolio-card">
-        <img class="net-img" src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=600" alt="内容策划">
-        <div class="portfolio-card-body">
-          <h5>内容策划案例</h5>
-          <p>账号定位、选题规划、内容矩阵与商业推广方案，强调从选题到成稿的完整链路。</p>
-          <a class="btn-detail" href="#">查看详情</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 联系我 -->
-  <section class="panel" id="contact">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="panel-header" style="margin-bottom:18px">联系我</div>
-        <p><strong>电话：</strong>18215676525</p>
-        <p><strong>邮箱：</strong>1913369022@qq.com</p>
-        <p><strong>自媒体ID：</strong>杨大寻（小红书 / 抖音 / 知乎）</p>
-        <p>欢迎岗位咨询、稿件与项目合作对接。</p>
-        <a class="btn-download" href="#">📄 下载个人简历PDF</a>
-      </div>
-      <div class="contact-img">
-        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=900" alt="联系沟通">
       </div>
     </div>
   </section>
 
+  <!-- 联系我：简历下载，上传resume.pdf到仓库生效 -->
+  <section class="section-card section-two-col" id="contact">
+    <div class="text-area">
+      <h2 class="section-title">联系我</h2>
+      <p><strong>电话：</strong>18215676525</p>
+      <p><strong>邮箱：</strong>1913369022@qq.com</p>
+      <p><strong>自媒体ID：</strong>杨大寻（小红书 / 抖音 / 知乎）</p>
+      <p>欢迎咨询岗位机会、稿件合作、内容项目对接。</p>
+      <!-- 👉上传简历文件命名 resume.pdf 到GitHub仓库，链接即可生效，新窗口打开 -->
+      <a class="btn-download" href="./resume.pdf" target="_blank" rel="noopener noreferrer">📄 下载个人简历PDF</a>
+      <p style="font-size:13px;color:#777;margin-top:8px;">提示：将简历PDF上传仓库命名为 resume.pdf，此按钮即可正常下载</p>
+    </div>
+    <img class="net-img" src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&fit=crop" alt="联系沟通">
+  </section>
 </div>
 
 <div id="imgModal">
